@@ -1,15 +1,13 @@
-import React, { useContext } from 'react';
-import AuthContext from '../../store/auth-context';
+import React from 'react';
+
 import Navigation from './Navigation';
 import classes from './MainHeader.module.css';
 
-const MainHeader = () => {
-  const ctx = useContext(AuthContext); 
-
+const MainHeader = (props) => {
   return (
     <header className={classes['main-header']}>
       <h1>A Typical Page</h1>
-      <Navigation isLoggedIn={ctx.isLoggedIn} onLogout={ctx.onLogout} /> 
+      <Navigation isLoggedIn={props.isAuthenticated} onLogout={props.onLogout} />
     </header>
   );
 };
